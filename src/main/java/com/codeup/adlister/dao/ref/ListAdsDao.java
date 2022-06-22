@@ -1,4 +1,4 @@
-package com.codeup.adlister.dao;
+package com.codeup.adlister.dao.ref;
 
 import com.codeup.adlister.models.Ad;
 
