@@ -1,6 +1,6 @@
 package com.codeup.adlister.models;
 
-public class LOT {
+public class lot {
 
     private int id;
     private String title;
@@ -29,10 +29,10 @@ public class LOT {
 //            | state         | varchar(45)   | NO   |     | NULL    |                |
 //            | gov_org
 
-    public LOT() {
+    public lot() {
     }
 
-    public LOT(int id, String title, String description, String street_number, String street_name, String username, String email, String appraisal, String sale_price, String listing_name, String city, String state, String gov_org) {
+    public lot(int id, String title, String description, String street_number, String street_name, String username, String email, String appraisal, String sale_price, String listing_name, String city, String state, String gov_org) {
         this.id = id;
         this.title = title;
         this.description = description;

@@ -33,12 +33,12 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
+            <version>4.0.1</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>4.0.1</version>
         </dependency>
 
         <dependency>
@@ -50,7 +50,13 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.23</version>
+            <version>8.0.29</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.schlaubi.lavakord</groupId>
+            <artifactId>java</artifactId>
+            <version>3.6.2</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

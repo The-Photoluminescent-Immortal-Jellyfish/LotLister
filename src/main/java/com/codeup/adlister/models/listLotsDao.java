@@ -3,16 +3,16 @@ package com.codeup.adlister.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListLotsDao implements Ads {
-    private List<LOT> ads;
+public class listLotsDao implements com.codeup.adlister.models.ads {
+    private List<lot> ads;
 
-    public List<LOT> all() {
+    public List<lot> all() {
         if (ads == null) {
             ads = generateAds();
         }
         return ads;
     }
-    public int insert(LOT ad) {
+    public int insert(lot ad) {
         // make sure we have ads
         if (ads == null) {
             ads = generateAds();
@@ -23,9 +23,9 @@ public class ListLotsDao implements Ads {
         ads.add(ad);
         return ad.getId();
     }
-    private List<LOT> generateAds() {
-        List<LOT> ads = new ArrayList<>();
-        ads.add(new LOT(
+    private List<lot> generateAds() {
+        List<lot> ads = new ArrayList<>();
+        ads.add(new lot(
 
         ));
 //        ads.add(new LOT(

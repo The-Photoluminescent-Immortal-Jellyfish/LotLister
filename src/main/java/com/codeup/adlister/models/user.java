@@ -1,28 +1,22 @@
 package com.codeup.adlister.models;
 
-public class USER {
-    private int id;
+public class user {
     private String username;
     private String email;
     private String password;
 
-    public USER() {
+    public user() {
     }
 
-    public USER(int id, String username, String email, String password) {
-        this.id = id;
+    public user(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
+
 
     public String getUsername() {
         return username;
