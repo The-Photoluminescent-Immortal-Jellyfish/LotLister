@@ -27,13 +27,13 @@ public class RegisterServlet extends HttpServlet {
 //            compare password and confirm_password
         if (passcode.equals(passwordConfirm)) {
             user newUser = new user(person, email, passcode);
-            createNewUser();
+            createNewUser(newUser);
         }
 // ...
 
-        }
+    }
 
-    private void createNewUser() throws IOException {
+    private void createNewUser(user thisUser) throws IOException {
         Path path = (Path) Paths.get("\"mysql.gitignore\"");
         StringBuilder sb = new StringBuilder();
         Stream<String> stream = null;
@@ -46,27 +46,16 @@ public class RegisterServlet extends HttpServlet {
                     "root", mysqlPass);
             if (connection != null) {
                 System.out.println("Connection established......");
-                StringBuilder script = new StringBuilder("src/main/SqlScripts/newUser.sql") {
-                    String query = script.toString();
-                    Statement connectionStatement = connection.createStatement();
+                StringBuilder script = new StringBuilder("src/main/SqlScripts/newUser.sql");
+                String query = script.toString();
+                PreparedStatement sqlScript = connection.prepareStatement(query);
+                sqlScript.executeUpdate();
 //       ===========================================  ISSUES  ===========================================
-                    java.beans.Statement.executeUpdate();
-                    ResultSet rs = (connectionStatement.ResultSet) connectionStatement.getGeneratedKeys();
-                    if(query.next())
-
-                    {
-                        System.out.println("Inserted a new record! New id: " + rs.getLong(1));
-                    }
-                };
             }
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-}
-
-
 
 
 //        if equals
@@ -89,3 +78,4 @@ public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
+}
