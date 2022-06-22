@@ -1,4 +1,4 @@
-package com.codeup.adlister.controllers.ref;
+package com.codeup.adlister.ref;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -6,11 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.LogoutServlet", urlPatterns = "/logout")
-public class LogoutServlet extends HttpServlet {
+@WebServlet(name = "controllers.HelloWorldServlet", urlPatterns = "/")
+public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.getSession().removeAttribute("user");
-        request.getSession().invalidate();
-        response.sendRedirect("/login");
+        response.getWriter().println("<h1>Hello, World!</h1>");
     }
 }
