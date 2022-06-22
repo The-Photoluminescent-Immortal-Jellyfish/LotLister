@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.stream.Stream;
 
 
@@ -29,14 +30,14 @@ import java.util.stream.Stream;
 public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            String password = request.getParameter("password");
+            String passcode = request.getParameter("password");
             String passwordConfirm = request.getParameter("confirm_password");
-            String username = request.getParameter("username");
+            String person = request.getParameter("username");
             String email = request.getParameter("email");
 
 //            compare password and confirm_password
-        if (password.equals(passwordConfirm)) {
-            user newUser = new user(username, email, password);
+        if (passcode.equals(passwordConfirm)) {
+            user newUser = new user(person, email, passcode);
 // ...
             Path path = (Path) Paths.get("\"mysql.gitignore\"");
             StringBuilder sb = new StringBuilder();
@@ -50,14 +51,13 @@ public class RegisterServlet extends HttpServlet {
                         "root", mysqlPass);
                 if(connection != null) {
                     System.out.println("Connection established......");
-                    //Initialize the script runner
-                    ScriptRunner sr = new ScriptRunner(connection);
-                    //Creating a reader object
-                    Reader reader = new BufferedReader(new FileReader("E:\\sampleScript.sql"));
-                    //Running the script
-                    sr.runScript(reader);
-                }
-            }
+                    String query = "INSERT INTO USERS (username, email, password) VALUES('Nelly Furtado', 'Loose', 2006, 'Pop, Urban, R&B', 12.5)";
+                    Statement stmt = connection.createStatement();
+                    stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+                    ResultSet rs = stmt.getGeneratedKeys();
+                    if (rs.next()) {
+                        System.out.println("Inserted a new record! New id: " + rs.getLong(1));
+                    }
                 }
 
                 }
