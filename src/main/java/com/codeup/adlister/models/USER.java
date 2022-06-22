@@ -1,31 +1,26 @@
 package com.codeup.adlister.models;
 
-public class User {
-    private long id;
+public class USER {
+    private int id;
     private String username;
     private String email;
     private String password;
 
-    public User() {}
-
-    public User(String username, String email, String password) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
+    public USER() {
     }
 
-    public User(long id, String username, String email, String password) {
+    public USER(int id, String username, String email, String password) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
