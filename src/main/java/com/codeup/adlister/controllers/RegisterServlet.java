@@ -111,7 +111,6 @@ public class RegisterServlet extends HttpServlet {
 //            response.sendRedirect("/login");
 //        }
 //    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
