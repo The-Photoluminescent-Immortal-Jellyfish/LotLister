@@ -6,8 +6,10 @@
         <div class="navbar-header d-flex row w-25">
             <a class="navbar-brand btn btn-info col" role="button" href="${pageContext.request.contextPath}../ads">Lotlister</a><p class="col " style = "color: white">  <---- Click to add a lot</p>
         </div>
+        <div class="navbar-header d-flex row w-25">
+        <a class="navbar-brand btn btn-info col" role="button" href="${pageContext.request.contextPath}../ads">Lotlistings</a><p class="col " style = "color: white">  <---- Click to browse a lot</p>
+        </div>
         <ul class="row nav navbar-nav navbar-right d-flex flex-row w-25 space-between">
-
             <li class = "col-4"><a href="${pageContext.request.contextPath}/login" class="btn btn-info" role="button">Login</a></li>
             <li class = "col-4"><a href="${pageContext.request.contextPath}/register" class="btn btn-info" role="button">Register</a></li>
             <li class = "col-4"><a href="${pageContext.request.contextPath}/logout" class="btn btn-info" role="button">Logout</a></li>
