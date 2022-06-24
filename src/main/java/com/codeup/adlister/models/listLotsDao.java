@@ -26,8 +26,10 @@ public class listLotsDao implements com.codeup.adlister.models.ads {
     private List<lot> generateAds() {
         List<lot> ads = new ArrayList<>();
         ads.add(new lot(
-
         ));
+        return ads;
+    }
+}
 //        ads.add(new LOT(
 //            2,
 //            1,
@@ -46,6 +48,3 @@ public class listLotsDao implements com.codeup.adlister.models.ads {
 //            "JavaScript Developer needed",
 //            "Must have strong Java skills"
 //        ));
-        return ads;
-    }
-}
