@@ -31,23 +31,23 @@
         <div class="row">
             <div>
 
-                <div class="navbar-header col">
+                <div class="navbar-header">
                     <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                     <a href="#" class="navbar-brand">LOTLISTER</a>
                 </div>
 
-                <div class = "col">
+                <div>
                     <ul class="row nav navbar-nav navbar-right d-flex flex-row w-25 space-between">
-                                    <li><a href="${pageContext.request.contextPath}/login" class="btn btn-primary col" role="button">Login</a></li>
-                                    <li><a href="${pageContext.request.contextPath}/register" class="btn btn-primary col" role="button">Register</a></li>
-                                    <li><a href="${pageContext.request.contextPath}/logout" class="btn btn-primary col" role="button">Logout</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/login" class="btn btn-primary" role="button">Login</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/register" class="btn btn-primary" role="button">Register</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/logout" class="btn btn-primary" role="button">Logout</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
                         <li>
                             <form action="" class="navbar-form">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
+                                        <%--@declare id="search"--%><label for="search"></label><input type="search" name="search" id="search" placeholder="Search Anything Here..." class="form-control">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
                                     </div>
                                 </div>

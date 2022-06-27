@@ -47,7 +47,7 @@
                             <form action="" class="navbar-form">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
+                                        <%--@declare id="search"--%><label for="search"></label><input type="search" name="search" id="search" placeholder="Search Anything Here..." class="form-control">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
                                     </div>
                                 </div>
