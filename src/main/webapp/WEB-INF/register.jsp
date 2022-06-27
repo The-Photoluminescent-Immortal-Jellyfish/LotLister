@@ -4,7 +4,7 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
-    <title></title></head>
+</head>
 <body>
 <jsp:include page="partials/navbar.jsp" />
 <div class="container">
