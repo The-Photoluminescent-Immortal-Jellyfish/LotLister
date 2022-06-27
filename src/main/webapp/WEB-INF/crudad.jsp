@@ -17,8 +17,10 @@
 <jsp:include page="partials/navbar.jsp" />
 <div class = "container">
     <h1>Type a Lot.</h1>
+    <div class = "col w-90">
 <form action="${pageContext.request.contextPath}/crudad" method="post">
 
+    <div class = "col">
     <%--    this.title = title;--%>
     <div class="form-group">
         <label for="title">title</label>
@@ -49,6 +51,8 @@
         <label for="email">email</label>
         <input id="email" name="email" class="form-control" type="text">
     </div>
+</div>
+<div class = "col">
 <%--    this.appraisal = appraisal;--%>
     <div class="form-group">
         <label for="appraisal">appraisal</label>
@@ -77,8 +81,11 @@
         <input id="gov_org" name="gov_org" class="form-control" type="text">
 
     </div>
+    <div class = "form-group">
         <input type="submit" class="btn btn-primary btn-block">
+    </div>
 </form>
+</div>
 </div>
 </body>
 </html>
