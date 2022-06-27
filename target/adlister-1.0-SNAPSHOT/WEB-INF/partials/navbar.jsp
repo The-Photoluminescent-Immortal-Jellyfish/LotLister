@@ -31,16 +31,16 @@
         <div class="row">
             <div>
 
-                <div class="navbar-header">
+                <div class="navbar-header col">
                     <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                     <a href="#" class="navbar-brand">LOTLISTER</a>
                 </div>
 
-                <div>
+                <div class = "col">
                     <ul class="row nav navbar-nav navbar-right d-flex flex-row w-25 space-between">
-                                    <li><a href="${pageContext.request.contextPath}/login" class="btn btn-primary" role="button">Login</a></li>
-                                    <li><a href="${pageContext.request.contextPath}/register" class="btn btn-primary" role="button">Register</a></li>
-                                    <li><a href="${pageContext.request.contextPath}/logout" class="btn btn-primary" role="button">Logout</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/login" class="btn btn-primary col" role="button">Login</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/register" class="btn btn-primary col" role="button">Register</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/logout" class="btn btn-primary col" role="button">Logout</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
                         <li>
@@ -58,8 +58,8 @@
             </div>
         </div>
     </div>
-</nav>
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
