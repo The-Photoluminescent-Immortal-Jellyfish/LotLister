@@ -1,6 +1,6 @@
 package backend.models;
 
-public class lot {
+public class Lot {
 
     private int id;
     private String title;
@@ -29,10 +29,10 @@ public class lot {
 //            | state         | varchar(45)   | NO   |     | NULL    |                |
 //            | gov_org
 
-    public lot() {
+    public Lot() {
     }
 
-    public lot(int id, String title, String description, String street_number, String street_name, String username, String email, String appraisal, String sale_price, String listing_name, String city, String state, String gov_org) {
+    public Lot(int id, String title, String description, String street_number, String street_name, String username, String email, String appraisal, String sale_price, String listing_name, String city, String state, String gov_org) {
         this.id = id;
         this.title = title;
         this.description = description;

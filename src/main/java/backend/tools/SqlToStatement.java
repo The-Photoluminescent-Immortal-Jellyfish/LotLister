@@ -9,7 +9,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-
 public class SqlToStatement {
 
     public static void main(String[] args) throws IOException {
@@ -31,8 +30,8 @@ public class SqlToStatement {
                 "password"
         );
 //        prepare the statement from the String that was created using the appropriate filepath
-        PreparedStatement statment = connection.prepareStatement(sqlString);
+        PreparedStatement statement = connection.prepareStatement(sqlString);
 //        execute sql statement
-        statment.execute();
+        statement.execute();
     }
 }
