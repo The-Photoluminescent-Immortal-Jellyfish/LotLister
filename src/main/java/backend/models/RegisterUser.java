@@ -48,5 +48,4 @@ public class RegisterUser extends HttpServlet {
                 }
             }
         }
-
     }

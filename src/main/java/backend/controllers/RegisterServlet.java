@@ -11,7 +11,10 @@ import java.io.IOException;
 
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
-
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+        RegisterUser.registerUser(request, response);
+    }
 
 
 //    public static void registerUser(HttpServletRequest request) throws IOException, ClassCastException, SQLException {
@@ -30,10 +33,6 @@ public class RegisterServlet extends HttpServlet {
 //                String query = script.toString();
 //                PreparedStatement sqlScript = connection.prepareStatement(query);
 //    }
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        RegisterUser.registerUser(request, response);
-    }
 //
 //
 // get register form data from register.jsp
@@ -69,9 +68,7 @@ public class RegisterServlet extends HttpServlet {
 //                e.printStackTrace();
 //            }
 //        }
-
 //       ===========================================  ISSUES  ===========================================
-
 //        request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
 //    public void createNewUser(user thisUser) throws IOException {
 //        Path path = (Path) Paths.get("\"mysql.gitignore\"");
@@ -102,7 +99,7 @@ public class RegisterServlet extends HttpServlet {
 
 //        run prepared statement using a mysql script through a jdbc connection
 
-//        String username = request.getParameter("username");
+    //        String username = request.getParameter("username");
 //        String password = request.getParameter("password");
 //        boolean validAttempt = username.equals("admin") && password.equals("password");
 //
