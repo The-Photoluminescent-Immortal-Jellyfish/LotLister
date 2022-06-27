@@ -13,7 +13,7 @@ import java.io.IOException;
 //      and show verification of success or failure
 //      and redirect url to appropriate page
 //      decouple methods to create new classes when necessary
-@WebServlet(name = "controllers.CrudAdServlet", urlPatterns = "/edit")
+@WebServlet(name = "controllers.CrudAdServlet", urlPatterns = "/crudad")
 public class CrudAdServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
