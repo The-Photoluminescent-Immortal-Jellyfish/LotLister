@@ -1,4 +1,4 @@
-package backend.models;
+package backend.tools;
 //        get register form data from register.jsp
 
 import javax.servlet.http.HttpServlet;

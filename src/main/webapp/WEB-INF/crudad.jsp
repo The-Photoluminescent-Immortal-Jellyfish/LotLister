@@ -17,7 +17,7 @@
 <jsp:include page="partials/navbar.jsp" />
 <div class = "container">
     <h1>Type a Lot.</h1>
-    <div class = "row w-90">
+    <div class = "row">
 <form action="${pageContext.request.contextPath}/crudad" method="post">
     <div class = "row">
 
