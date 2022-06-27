@@ -2,9 +2,9 @@ package backend.models;
 
 import java.util.List;
 
-public interface ads {
+public interface Ads {
     // get a list of all the ads
-    List<lot> all();
+    List<Lot> all();
     // insert a new ad and return the new ad's id
-    int insert(lot ad);
+    int insert(Lot ad);
 }

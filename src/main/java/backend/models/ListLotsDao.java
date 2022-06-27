@@ -3,16 +3,17 @@ package backend.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class listLotsDao implements backend.models.ads {
-    private List<lot> ads;
+public class ListLotsDao implements Ads {
+    private List<Lot> ads;
 
-    public List<lot> all() {
+    public List<Lot> all() {
         if (ads == null) {
             ads = generateAds();
         }
         return ads;
     }
-    public int insert(lot ad) {
+
+    public int insert(Lot ad) {
         // make sure we have ads
         if (ads == null) {
             ads = generateAds();
@@ -23,9 +24,10 @@ public class listLotsDao implements backend.models.ads {
         ads.add(ad);
         return ad.getId();
     }
-    private List<lot> generateAds() {
-        List<lot> ads = new ArrayList<>();
-        ads.add(new lot(
+
+    private List<Lot> generateAds() {
+        List<Lot> ads = new ArrayList<>();
+        ads.add(new Lot(
         ));
         return ads;
     }
