@@ -1,6 +1,6 @@
 package backend.controllers;
 
-import backend.models.RegisterUser;
+import backend.tools.RegisterUser;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
