@@ -1,4 +1,4 @@
-package backend.ref;
+package backend.controllers;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
