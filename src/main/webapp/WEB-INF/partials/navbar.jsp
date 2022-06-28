@@ -13,6 +13,7 @@
         font-family: 'Montserrat Alternates', sans-serif;
         font-weight: bold;
     }
+
     .navbar{
         min-height: 180px;
         justify-content: space-between;
@@ -20,7 +21,11 @@
     .icons{
         font-size: 35px;
     }
-    .navbar-form{
+
+
+
+    .navbar {
+        min-height: 180px;
 
     }
 </style>

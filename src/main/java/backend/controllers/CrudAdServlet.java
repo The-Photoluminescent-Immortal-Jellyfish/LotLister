@@ -65,7 +65,7 @@ public class CrudAdServlet extends HttpServlet {
                 PreparedStatement sqlScript2 = null;
                 sqlScript = connection.prepareStatement("USE lots_db;");
                 sqlScript2 = connection.prepareStatement("INSERT INTO lots_db.LOTS " +
-                        "(title, description, street_number,street_name,username,email,appraisal,sale_price,city,state,gov_org) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+                        "(title, description, street_number, street_name, username, email, appraisal, sale_price, city, state, gov_org) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 
                 assert sqlScript != null;
                 assert sqlScript2 != null;

@@ -1,6 +1,9 @@
 package backend.controllers;
 
-import backend.models.RegisterUser;
+import backend.models.DaoFactory;
+import backend.models.User;
+import backend.models.Users;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,12 +11,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        RegisterUser.registerUser(request, response);
+
+       //Talking to form example below
+       String username = request.getParameter("username");
+       String email = request.getParameter("email");
+       String password = request.getParameter("password");
+
+       //However you do it - grab info from form to fill in the user object to persist
+
+        try {
+
+
+            Users usersDao = DaoFactory.getUsersDao();
+            usersDao.insert(username,email,password);
+
+            //send redirect to login after; <---
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
     }
 
 
