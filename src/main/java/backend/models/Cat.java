@@ -1,5 +1,5 @@
 package backend.models;
 
-public class Category {
+public class Cat {
 
 }
