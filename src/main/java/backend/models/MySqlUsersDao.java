@@ -13,22 +13,16 @@ public class MySqlUsersDao implements Users {
     }
 
 
-    @Override
-    public User findByUsername(String username) {
-
-        return null;
-    }
+//    @Override
+//    public User findByUsername(String username) {
+//
+//        return null;
+//    }
 
     @Override
     public void insert(User user) throws SQLException {
-
-        createUser(user);
-    }
-
-    private void createUser(User user) throws SQLException {
         PreparedStatement sqlScript = connection.prepareStatement(
                 "INSERT INTO lots_db.USERS (username, email, password) values(?, ?, ?);");
-
 
         assert sqlScript != null;
 
@@ -39,6 +33,10 @@ public class MySqlUsersDao implements Users {
         sqlScript.execute();
         sqlScript.executeUpdate();
     }
+}
+
+//    private void createUser(User user) throws SQLException {
+
 
 //    private void createUser(String username, String email, String password, Connection connection) {
 //    }
@@ -57,4 +55,3 @@ public class MySqlUsersDao implements Users {
 //        sqlScript.execute();
 //        sqlScript.executeUpdate();
 //    }
-}
