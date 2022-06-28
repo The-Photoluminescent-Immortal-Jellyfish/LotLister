@@ -23,13 +23,15 @@ public class RegisterServlet extends HttpServlet {
        String email = request.getParameter("email");
        String password = request.getParameter("password");
 
+       User user = new User(username, email, password);
+
        //However you do it - grab info from form to fill in the user object to persist
 
         try {
 
 
             Users usersDao = DaoFactory.getUsersDao();
-            usersDao.insert(username,email,password);
+            usersDao.insert(user);
 
             //send redirect to login after; <---
 

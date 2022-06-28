@@ -32,8 +32,7 @@ public class Lot {
     public Lot() {
     }
 
-    public Lot(int id, String title, String description, String street_number, String street_name, String username, String email, String appraisal, String sale_price, String listing_name, String city, String state, String gov_org) {
-        this.id = id;
+    public Lot(String title, String description, String street_number, String street_name, String username, String email, String appraisal, String sale_price, String city, String state, String gov_org) {
         this.title = title;
         this.description = description;
         this.street_number = street_number;
@@ -46,9 +45,6 @@ public class Lot {
         this.state = state;
         this.gov_org = gov_org;
     }
-
-    public ArrayList<Lot> Lots = new ArrayList();
-
 
     public int getId() {
         return id;

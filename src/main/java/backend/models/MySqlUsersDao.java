@@ -20,27 +20,41 @@ public class MySqlUsersDao implements Users {
     }
 
     @Override
-    public User insert(String username, String email, String password) throws SQLException {
+    public void insert(User user) throws SQLException {
 
-        createUser(username, email, password, connection);
-        return null;
+        createUser(user);
     }
 
-//    private void createUser(String username, String email, String password, Connection connection) {
-//    }
-
-    public static void createUser(String username, String email, String password, Connection connection) throws SQLException {
+    private void createUser(User user) throws SQLException {
         PreparedStatement sqlScript = connection.prepareStatement(
                 "INSERT INTO lots_db.USERS (username, email, password) values(?, ?, ?);");
 
 
         assert sqlScript != null;
 
-        sqlScript.setString(1, username);
-        sqlScript.setString(2, email);
-        sqlScript.setString(3, password);
+        sqlScript.setString(1, user.getUsername());
+        sqlScript.setString(2, user.getEmail());
+        sqlScript.setString(3, user.getPassword());
 
         sqlScript.execute();
         sqlScript.executeUpdate();
     }
+
+//    private void createUser(String username, String email, String password, Connection connection) {
+//    }
+
+//    public static void createUser(String username, String email, String password, Connection connection) throws SQLException {
+//        PreparedStatement sqlScript = connection.prepareStatement(
+//                "INSERT INTO lots_db.USERS (username, email, password) values(?, ?, ?);");
+//
+//
+//        assert sqlScript != null;
+//
+//        sqlScript.setString(1, username);
+//        sqlScript.setString(2, email);
+//        sqlScript.setString(3, password);
+//
+//        sqlScript.execute();
+//        sqlScript.executeUpdate();
+//    }
 }

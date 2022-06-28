@@ -8,11 +8,7 @@ import java.util.List;
 import static backend.tools.Connection.makeConnection;
 
 public class MySqlLotsDao implements Lots {
-    Connection connection = makeConnection();
-
-    public void MySqlUsersDao() throws SQLException {
-    }
-
+    static Connection connection = makeConnection();
 //    title description street_number street_name username email appraisal sale_price listing_name city state gov_org
 
 //    this.id = id;
@@ -32,6 +28,32 @@ public class MySqlLotsDao implements Lots {
     public MySqlLotsDao() throws SQLException {
     }
 
+    public static void insert(Lot newLot) throws SQLException {
+
+        PreparedStatement useDb = connection.prepareStatement("USE lots_db;");
+        PreparedStatement sqlScript = connection.prepareStatement(
+                "INSERT INTO lots_db.LOTS (title, description, street_number, street_name, username, email, appraisal, sale_price, city, state, gov_org) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+
+        assert useDb != null;
+        assert sqlScript != null;
+
+        sqlScript.setString(1, newLot.getTitle());
+        sqlScript.setString(2, newLot.getDescription());
+        sqlScript.setString(3, newLot.getStreet_number());
+        sqlScript.setString(4, newLot.getStreet_name());
+
+        sqlScript.setString(5, newLot.getUsername());
+        sqlScript.setString(6, newLot.getEmail());
+        sqlScript.setString(7, newLot.getAppraisal());
+        sqlScript.setString(8, newLot.getSale_price());
+
+        sqlScript.setString(9, newLot.getCity());
+        sqlScript.setString(10, newLot.getState());
+        sqlScript.setString(11, newLot.getGov_org());
+
+        useDb.execute();
+        sqlScript.executeUpdate();
+    }
 
     @Override
     public User findByTitle(String username) {
@@ -39,63 +61,9 @@ public class MySqlLotsDao implements Lots {
     }
 
     @Override
-    public Long insert(String username, String email, String password) {
-        createUser(username, email, password, connection);
-        return null;
-    }
-
-    private void createUser(String username, String email, String password, Connection connection) {
-    }
-
-    public static void create(String title, String description, String street_number,
-                              String street_name, String username, String email,
-                              String appraisal, String sale_price, String city,
-                              String state, String gov_org,
-                              Connection connection) throws SQLException {
-
-//        this.id = id;
-//        this.title = title;
-//        this.description = description;
-//        this.street_number = street_number;
-//        this.street_name = street_name;
-//        this.username = username;
-//        this.email = email;
-//        this.appraisal = appraisal;
-//        this.sale_price = sale_price;
-//        this.city = city;
-//        this.state = state;
-//        this.gov_org = gov_org;
-
-        PreparedStatement sqlScript = connection.prepareStatement(
-                "INSERT INTO lots_db.USERS (title, description, street_number, street_name, username, email, appraisal, sale_price, city, state, gov_org) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
-
-        assert sqlScript != null;
-
-        sqlScript.setString(1, title);
-        sqlScript.setString(2, description);
-        sqlScript.setString(3, street_number);
-        sqlScript.setString(4, street_name);
-
-        sqlScript.setString(5, username);
-        sqlScript.setString(6, email);
-        sqlScript.setString(7, appraisal);
-        sqlScript.setString(8, sale_price);
-
-        sqlScript.setString(9, city);
-        sqlScript.setString(10, state);
-        sqlScript.setString(11, gov_org);
-
-        sqlScript.execute();
-        sqlScript.executeUpdate();
-    }
-
-    @Override
     public List<Lot> all() {
+        Connection Connection = makeConnection();
+//        PreparedStatement sqlScript = connection.prepareStatement(
         return null;
-    }
-
-    @Override
-    public int insert(Lot ad) {
-        return 0;
     }
 }
