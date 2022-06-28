@@ -2,7 +2,6 @@ package backend.models;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 import static backend.tools.Connection.makeConnection;
 
@@ -54,13 +53,13 @@ public class MySqlLotsDao implements Lots {
         sqlScript.executeUpdate();
     }
 
-    @Override
-    public User findByTitle(String username) {
-        return null;
-    }
+//    @Override
+//    public User findByTitle(String username) {
+//        return null;
+//    }
 
     @Override
-    public List<Lot> all() throws SQLException {
+    public ArrayList<Lot> all() throws SQLException {
         PreparedStatement sqlScript = connection.prepareStatement("SELECT * FROM lots_db.LOTS;");
         ResultSet rs = sqlScript.executeQuery();
         int count = 0;

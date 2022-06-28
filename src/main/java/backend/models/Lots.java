@@ -2,12 +2,12 @@ package backend.models;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface Lots {
-    User findByTitle(String title);
+    //    Lot findByTitle(String title);
     // get a list of all the ads
-    List<Lot> all() throws SQLException;
     // insert a new ad and return the new ad's id
 
     static Lot insert(String Title, String Description, String Street_number,
@@ -17,4 +17,5 @@ public interface Lots {
                       Connection Connection) throws SQLException {
         return null;
     }
+    ArrayList<Lot> all() throws SQLException;
 }
