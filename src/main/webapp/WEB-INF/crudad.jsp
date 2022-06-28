@@ -18,7 +18,7 @@
 <div class = "container">
     <h1>Type a Lot.</h1>
     <div class = "row">
-<form action="${pageContext.request.contextPath}/crudad" method="post">
+<form action="/crudad" method="post">
     <div class = "row">
 
     <div class = "col">
@@ -82,16 +82,16 @@
         <input id="gov_org" name="gov_org" class="form-control" type="text">
 
     </div>
-    <div class="input-group col">
-        <div class="input-group-prepend">
-            <div class="input-group-text">
-                <input type="radio" aria-label="Real Estate" name="real_estate">
-                <input type="radio" aria-label="Auto" name="auto">
-                <input type="radio" aria-label="Artwork" name="artwork">
-            </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button">
-    </div>
+<%--    <div class="input-group col">--%>
+<%--        <div class="input-group-prepend">--%>
+<%--            <div class="input-group-text">--%>
+<%--                <input type="radio" aria-label="Real Estate" name="real_estate">--%>
+<%--                <input type="radio" aria-label="Auto" name="auto">--%>
+<%--                <input type="radio" aria-label="Artwork" name="artwork">--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <input type="text" class="form-control" aria-label="Text input with radio button">--%>
+<%--    </div>--%>
     <div class = "form-group">
         <input type="submit" class="btn btn-primary btn-block">
     </div>

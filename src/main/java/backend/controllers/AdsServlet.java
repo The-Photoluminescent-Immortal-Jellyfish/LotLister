@@ -29,7 +29,7 @@ import java.util.ArrayList;
 
 
                 Lots lotsDao = DaoFactory.getLotsDao();
-                ArrayList<Lot> lotsIndex = lotsDao.all();
+                ArrayList<Lot> lots = new ArrayList<Lot>(Lots.all());
 
                 //send redirect to login after; <---
 
