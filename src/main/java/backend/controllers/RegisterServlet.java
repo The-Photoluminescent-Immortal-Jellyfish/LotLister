@@ -16,7 +16,7 @@ import java.sql.SQLException;
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
        //Talking to form example below
        String username = request.getParameter("username");
@@ -38,6 +38,7 @@ public class RegisterServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 
 
 

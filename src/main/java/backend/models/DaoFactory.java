@@ -10,6 +10,7 @@ public class DaoFactory {
 
 
     private static Users usersDao;
+    private static Lots lotsDao;
 //    private static Ads adsDao;
 //    private static Lots lotsDao;
 
@@ -19,5 +20,11 @@ public class DaoFactory {
             usersDao = new MySqlUsersDao();
         }
         return usersDao;
+    }
+    public static Lots getLotsDao() throws SQLException {
+        if (lotsDao == null) {
+            lotsDao = new MySqlLotsDao();
+        }
+        return lotsDao;
     }
 }
