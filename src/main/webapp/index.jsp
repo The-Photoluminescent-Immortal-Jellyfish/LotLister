@@ -13,7 +13,7 @@
 <div class="container">
     <div class="row">
         <div>
-            <form class="" action="${pageContext.request.contextPath}/ads" method="Post">
+            <form class="" action="${pageContext.request.contextPath}/ads" method="post">
                 <a class="home-list w-text" href="/category?value=0">View all available listings! </a>
             </form>
         </div>
