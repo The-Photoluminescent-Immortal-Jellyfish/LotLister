@@ -21,9 +21,11 @@ public class MySqlUsersDao implements Users {
 
     @Override
     public void insert(User user) throws SQLException {
+        PreparedStatement useDb = connection.prepareStatement("USE lots_db;");
         PreparedStatement sqlScript = connection.prepareStatement(
                 "INSERT INTO lots_db.USERS (username, email, password) values(?, ?, ?);");
 
+        assert useDb != null;
         assert sqlScript != null;
 
         sqlScript.setString(1, user.getUsername());
