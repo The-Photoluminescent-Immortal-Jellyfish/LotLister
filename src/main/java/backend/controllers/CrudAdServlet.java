@@ -1,6 +1,8 @@
 package backend.controllers;
 
+import backend.models.DaoFactory;
 import backend.models.Lot;
+import backend.models.Lots;
 import backend.models.MySqlLotsDao;
 import com.mysql.cj.jdbc.Driver;
 
@@ -14,7 +16,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 
 //      make a servlet that receives CRUD requests from various forms,
 //      runs associated subprograms,
@@ -52,12 +53,14 @@ public class CrudAdServlet extends HttpServlet {
         String state = request.getParameter("state");
         String gov_org = request.getParameter("gov_org");
 
-        Lot newLot = new Lot(title, description, street_number, street_name, username, email, appraisal, sale_price, city, state, gov_org);
+        Lot lot = new Lot(title, description, street_number, street_name, username, email, appraisal, sale_price, city, state, gov_org);
         try {
-            MySqlLotsDao.insert(newLot);
+            Lots lotsDao = DaoFactory.getLotsDao();
+            lotsDao.insert(lot);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         //
 //
 //

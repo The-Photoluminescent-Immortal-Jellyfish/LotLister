@@ -7,6 +7,7 @@ package backend.models;
 
 
 import backend.tools.Config;
+import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,19 +15,19 @@ import java.util.ArrayList;
 public class MySqlLotsDao implements Lots {
 //    DriverManager.registerDriver(new Driver());
 
-    private static Config config;
-    static Connection connection;
+    public Connection connection = null;
 
-    static {
-        try {
-            connection = DriverManager.getConnection(
-                    config.getUrl(),
-                    config.getUser(),
-                    config.getPassword()
-            );
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public MySqlLotsDao() throws SQLException {
+
+        Config config = new Config();
+
+        DriverManager.registerDriver(new Driver());
+        connection = DriverManager.getConnection(
+                config.getUrl(),
+                config.getUser(),
+                config.getPassword()
+        );
+
     }
 //    static Connection connection = makeConnection();
 //    title description street_number street_name username email appraisal sale_price listing_name city state gov_org
@@ -45,35 +46,38 @@ public class MySqlLotsDao implements Lots {
 //        this.state = state;
 //        this.gov_org = gov_org;
 
-    public MySqlLotsDao() throws SQLException, SQLException {
-    }
 
-    public static void insert(Lot newLot) throws SQLException {
-
+    public void insert(Lot newLot) {
+        try {
         PreparedStatement useDb = connection.prepareStatement("USE lots_db;");
         PreparedStatement sqlScript = connection.prepareStatement(
-                "INSERT INTO lots_db.LOTS (title, description, street_number, street_name, username, email, appraisal, sale_price, city, state, gov_org) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+                "INSERT INTO lots_db.LOTS (street_number, street_name, username, email, appraisal, sale_price, city, state, gov_org, title, description) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 
         assert useDb != null;
         assert sqlScript != null;
 
-        sqlScript.setString(1, newLot.getTitle());
-        sqlScript.setString(2, newLot.getDescription());
-        sqlScript.setString(3, newLot.getStreet_number());
-        sqlScript.setString(4, newLot.getStreet_name());
 
-        sqlScript.setString(5, newLot.getUsername());
-        sqlScript.setString(6, newLot.getEmail());
-        sqlScript.setString(7, newLot.getAppraisal());
-        sqlScript.setString(8, newLot.getSale_price());
+        sqlScript.setString(1, newLot.getStreet_number());
+        sqlScript.setString(2, newLot.getStreet_name());
 
-        sqlScript.setString(9, newLot.getCity());
-        sqlScript.setString(10, newLot.getState());
-        sqlScript.setString(11, newLot.getGov_org());
+        sqlScript.setString(3, newLot.getUsername());
+        sqlScript.setString(4, newLot.getEmail());
+        sqlScript.setString(5, newLot.getAppraisal());
+        sqlScript.setString(6, newLot.getSale_price());
+
+        sqlScript.setString(7, newLot.getCity());
+        sqlScript.setString(8, newLot.getState());
+        sqlScript.setString(9, newLot.getGov_org());
+
+        sqlScript.setString(10, newLot.getTitle());
+        sqlScript.setString(11, newLot.getDescription());
 
         useDb.execute();
         sqlScript.executeUpdate();
     }
+        catch (SQLException e) {
+            System.out.println("error = " + e);}
+        }
 }
 //    @Override
 //    public User findByTitle(String username) {
