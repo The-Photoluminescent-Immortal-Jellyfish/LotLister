@@ -7,7 +7,7 @@ import java.util.List;
 public interface Lots {
     User findByTitle(String title);
     // get a list of all the ads
-    List<Lot> all();
+    List<Lot> all() throws SQLException;
     // insert a new ad and return the new ad's id
 
     static Lot insert(String Title, String Description, String Street_number,
