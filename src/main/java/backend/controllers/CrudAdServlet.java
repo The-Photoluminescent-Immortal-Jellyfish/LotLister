@@ -15,7 +15,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import static backend.models.MySqlLotsDao.insert;
 
 //      make a servlet that receives CRUD requests from various forms,
 //      runs associated subprograms,
@@ -55,11 +54,11 @@ public class CrudAdServlet extends HttpServlet {
 
         Lot newLot = new Lot(title, description, street_number, street_name, username, email, appraisal, sale_price, city, state, gov_org);
         try {
-            insert(newLot);
+            MySqlLotsDao.insert(newLot);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//
+        //
 //
 //
 //
@@ -113,6 +112,7 @@ public class CrudAdServlet extends HttpServlet {
 //                e.printStackTrace();
 //            }
         }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import static backend.models.MySqlLotsDao.insert;
+//import static backend.models.MySqlLotsDao.insert;
 
     //      make a servlet that receives CRUD requests from various forms,
 //      runs associated subprograms,

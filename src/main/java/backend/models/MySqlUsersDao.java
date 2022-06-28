@@ -1,15 +1,29 @@
 package backend.models;
 
+
+import backend.tools.Config;
+import com.mysql.cj.jdbc.Driver;
+
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import static backend.tools.Connection.makeConnection;
-
 public class MySqlUsersDao implements Users {
-    Connection connection = makeConnection();
+
+    private Connection connection = null;
 
     public MySqlUsersDao() throws SQLException {
+
+        Config config = new Config();
+
+        DriverManager.registerDriver(new Driver());
+         connection = DriverManager.getConnection(
+                config.getUrl(),
+                config.getUser(),
+                config.getPassword()
+        );
+
     }
 
 
@@ -20,7 +34,9 @@ public class MySqlUsersDao implements Users {
 //    }
 
     @Override
-    public void insert(User user) throws SQLException {
+    public void insert(User user) {
+
+        try{
         PreparedStatement useDb = connection.prepareStatement("USE lots_db;");
         PreparedStatement sqlScript = connection.prepareStatement(
                 "INSERT INTO lots_db.USERS (username, email, password) values(?, ?, ?);");
@@ -32,8 +48,10 @@ public class MySqlUsersDao implements Users {
         sqlScript.setString(2, user.getEmail());
         sqlScript.setString(3, user.getPassword());
 
-        sqlScript.execute();
+        useDb.execute();
         sqlScript.executeUpdate();
+} catch (SQLException e){
+            System.out.println("error = " + e);}
     }
 }
 
@@ -57,3 +75,4 @@ public class MySqlUsersDao implements Users {
 //        sqlScript.execute();
 //        sqlScript.executeUpdate();
 //    }
+

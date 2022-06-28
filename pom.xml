@@ -24,6 +24,7 @@
     </build>
 
     <dependencies>
+
         <dependency>
             <groupId>org.mindrot</groupId>
             <artifactId>jbcrypt</artifactId>
@@ -45,14 +46,16 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.29</version>
+         <version>8.0.29</version>
         </dependency>
+
         <dependency>
             <groupId>dev.schlaubi.lavakord</groupId>
             <artifactId>java</artifactId>
             <version>3.6.2</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
