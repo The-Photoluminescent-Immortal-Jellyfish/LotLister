@@ -12,7 +12,7 @@
         float: right;
     }
     #header{
-        align-content: start;
+        float: left;
         font-size: 30px;
         font-family: 'Montserrat Alternates', sans-serif;
         font-weight: bold;
