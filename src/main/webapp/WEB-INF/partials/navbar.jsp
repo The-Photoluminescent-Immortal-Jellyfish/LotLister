@@ -20,6 +20,9 @@
     .icons{
         font-size: 35px;
     }
+    .navbar-form{
+
+    }
 </style>
 
 <body class="body">
