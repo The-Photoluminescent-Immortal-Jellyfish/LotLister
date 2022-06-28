@@ -17,6 +17,9 @@
         font-family: 'Montserrat Alternates', sans-serif;
         font-weight: bold;
     }
+    .navbar {
+        min-height: 180px;
+    }
 </style>
 
 <body class="body">
