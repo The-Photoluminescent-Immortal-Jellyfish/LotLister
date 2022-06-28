@@ -1,5 +1,7 @@
 package backend.models;
 
+import java.util.ArrayList;
+
 public class Lot {
 
     private int id;
@@ -11,7 +13,6 @@ public class Lot {
     private String email;
     private String appraisal;
     private String sale_price;
-    private String listing_name;
     private String city;
     private String state;
     private String gov_org;
@@ -24,7 +25,6 @@ public class Lot {
 //            | user          | varchar(45)   | NO   |     | NULL    |                |
 //            | appraisal     | decimal(10,2) | YES  |     | NULL    |                |
 //            | sale_price    | decimal(10,2) | YES  |     | NULL    |                |
-//            | listing_name  | varchar(45)   | NO   |     | NULL    |                |
 //            | city          | varchar(45)   | NO   |     | NULL    |                |
 //            | state         | varchar(45)   | NO   |     | NULL    |                |
 //            | gov_org
@@ -42,11 +42,13 @@ public class Lot {
         this.email = email;
         this.appraisal = appraisal;
         this.sale_price = sale_price;
-        this.listing_name = listing_name;
         this.city = city;
         this.state = state;
         this.gov_org = gov_org;
     }
+
+    public ArrayList<Lot> Lots = new ArrayList();
+
 
     public int getId() {
         return id;
@@ -120,14 +122,6 @@ public class Lot {
         this.sale_price = sale_price;
     }
 
-    public String getListing_name() {
-        return listing_name;
-    }
-
-    public void setListing_name(String listing_name) {
-        this.listing_name = listing_name;
-    }
-
     public String getCity() {
         return city;
     }
@@ -152,3 +146,4 @@ public class Lot {
         this.gov_org = gov_org;
     }
 }
+
