@@ -13,9 +13,7 @@ public interface Lots {
 //                      Connection Connection) throws SQLException {
 //        return null;
 //    }
+
     void insert(Lot lot);
-
-
-    static ArrayList<Lot> all() {
-    }
+    ArrayList<Lot> all();
 }

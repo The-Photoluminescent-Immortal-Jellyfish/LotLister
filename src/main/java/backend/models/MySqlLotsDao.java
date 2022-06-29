@@ -78,6 +78,14 @@ public class MySqlLotsDao implements Lots {
         catch (SQLException e) {
             System.out.println("error = " + e);}
         }
+
+    @Override
+    public ArrayList<Lot> all() {
+        if (lots == null) {
+            lots = generateLots();
+        }
+        return lots;
+    }
 }
 //    @Override
 //    public User findByTitle(String username) {

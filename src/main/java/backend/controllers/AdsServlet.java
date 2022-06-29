@@ -29,7 +29,8 @@ import java.util.ArrayList;
 
 
                 Lots lotsDao = DaoFactory.getLotsDao();
-                ArrayList<Lot> lots = new ArrayList<Lot>(Lots.all());
+                ArrayList<Lot> lots = new ArrayList<Lot>();
+
 
                 //send redirect to login after; <---
 
@@ -37,6 +38,9 @@ import java.util.ArrayList;
                 e.printStackTrace();
             }
         }
+
+
+
         @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
