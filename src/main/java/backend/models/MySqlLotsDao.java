@@ -81,11 +81,16 @@ public class MySqlLotsDao implements Lots {
 
     @Override
     public ArrayList<Lot> all() {
-        if (lots == null) {
-            lots = generateLots();
-        }
-        return lots;
+        return null;
     }
+
+//    @Override
+//    public ArrayList<Lot> all() {
+//        if (lots == null) {
+//            lots = generateLots();
+//        }
+//        return lots;
+//    }
 }
 //    @Override
 //    public User findByTitle(String username) {
