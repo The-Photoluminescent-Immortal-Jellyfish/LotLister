@@ -31,6 +31,12 @@ public class Lot {
 
     public Lot() {
     }
+//    public List<Ad> all() {
+//        if (ads == null) {
+//            ads = generateAds();
+//        }
+//        return ads;
+//    }
 
     public Lot(String title, String description, String street_number, String street_name, String username, String email, String appraisal, String sale_price, String city, String state, String gov_org) {
         this.title = title;
