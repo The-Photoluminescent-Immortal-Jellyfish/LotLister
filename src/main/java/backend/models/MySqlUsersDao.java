@@ -20,20 +20,17 @@ public class MySqlUsersDao implements Users {
                 config.getUser(),
                 config.getPassword()
         );
-
     }
-
-
 //    @Override
 //    public User findByUsername(String username) {
 //
 //        return null;
 //    }
-
     @Override
     public void insert(User user) {
 
-        try{
+        try
+        {
         PreparedStatement useDb = connection.prepareStatement("USE lots_db;");
         PreparedStatement sqlScript = connection.prepareStatement(
                 "INSERT INTO lots_db.USERS (username, email, password) values(?, ?, ?);");
@@ -47,7 +44,8 @@ public class MySqlUsersDao implements Users {
 
         useDb.execute();
         sqlScript.executeUpdate();
-} catch (SQLException e){
+        }
+        catch (SQLException e){
             System.out.println("error = " + e);}
     }
 }

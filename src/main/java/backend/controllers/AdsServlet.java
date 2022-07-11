@@ -29,8 +29,8 @@ import java.util.ArrayList;
 
 
                 Lots lotsDao = DaoFactory.getLotsDao();
-                ArrayList<Lot> lots = new ArrayList<Lot>();
-
+//                ArrayList<Lot> lots = new ArrayList<Lot>();
+                request.setAttribute("lots", lotsDao);
 
                 //send redirect to login after; <---
 
@@ -38,7 +38,27 @@ import java.util.ArrayList;
                 e.printStackTrace();
             }
         }
-
+//
+//        @WebServlet("/products/create")
+//        public class CreateProductServlet extends HttpServlet {
+//            @Override
+//            protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//                request.getRequestDispatcher("/products/create.jsp").forward(request, response);
+//            }
+//
+//            @Override
+//            protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//
+//                try {
+//                    Lots lotsDao = DaoFactory.getLotsDao();
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//                // create a new product based on the submitted data
+//                // persist the new product
+//                response.sendRedirect("/ads");
+//            }
+//        }
 
 
         @Override

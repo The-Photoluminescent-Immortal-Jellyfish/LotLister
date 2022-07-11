@@ -1,6 +1,9 @@
+<%--@elvariable id="lot" type="org.w3c.dom.html.HTMLDocument"--%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="backend.models.MySqlLotsDao" %>
-<%@ page import="backend.models.Lot" %><%--
+<%@ page import="backend.models.Lot" %>
+<%@ page import="backend.models.DaoFactory" %>
+<%@ page import="java.sql.SQLException" %><%--
   Created by IntelliJ IDEA.
   User: stout
   Date: 6/28/22
@@ -19,16 +22,21 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
-    <h1>Here Are all the ads!</h1>
+    <h1>Here Are all the lots!</h1>
+    <%try {
+request.setAttribute("lots", DaoFactory.getLotsDao().all());} catch (SQLException e) {
+    e.printStackTrace();
+}%>
+    <c:forEach var="lots" items="${lots.lot}">
+    <div class="item">
+        <h3>${lot.title}</h3>
+<%--        <p>${lot.description}</p>--%>
+<%--        <c:if test="${lot.isOnSale}">--%>
+<%--            <p>This item is on sale!</p>--%>
+<%--        </c:if>--%>
+        </item>
+        </c:forEach>
 
-    <jsp:useBean id="lots" scope="request" type="java.util.List"/>
-    <c:forEach var="lot" items="${lots}">
-        <div class="col-md-6">
-            <h2>${lot.title}</h2>
-            <p>${lot.description}</p>
-        </div>
-    </c:forEach>
 </div>
-
 </body>
 </html>

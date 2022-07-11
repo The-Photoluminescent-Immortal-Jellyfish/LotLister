@@ -3,8 +3,6 @@ package backend.controllers;
 import backend.models.DaoFactory;
 import backend.models.User;
 import backend.models.Users;
-
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,20 +26,13 @@ public class RegisterServlet extends HttpServlet {
        //However you do it - grab info from form to fill in the user object to persist
 
         try {
-
-
             Users usersDao = DaoFactory.getUsersDao();
             usersDao.insert(user);
-
             //send redirect to login after; <---
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
-
-
-
     }
 
 

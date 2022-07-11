@@ -1,8 +1,9 @@
 package backend.models;
 
+import java.io.*;
 import java.util.ArrayList;
 
-public class Lot {
+public class Lot implements Externalizable, Serializable {
 
     private int id;
     private String title;
@@ -146,6 +147,16 @@ public class Lot {
 
     public void setGov_org(String gov_org) {
         this.gov_org = gov_org;
+    }
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+
+    }
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+
     }
 }
 
